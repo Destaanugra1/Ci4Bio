@@ -1,0 +1,14 @@
+/vendor/
+/system/
+/writable/logs/
+/writable/cache/
+/writable/debugbar/
+/writable/session/
+/writable/uploads/
+/writable/database/
+/.env
+/composer.lock
+/composer.phar
+/node_modules/
+/npm-debug.log
+/yarn-error.log
