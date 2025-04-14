@@ -7,6 +7,7 @@
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- STYLES -->
 
@@ -36,6 +37,7 @@
             background-color: rgba(247, 248, 249, 1);
             padding: .4rem 0 0;
         }
+
         a {
             text-decoration: none;
             font-size: 2rem;
@@ -271,10 +273,17 @@
         </div>
 
         <div class="heroe">
+            <div class="">
+                <h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
+                <h2>The small framework with powerful features</h2>
+                <div class="text-blue-500 gap-4 font-bold">
+                    <a href="<?= site_url("biodataCard/2359201020/Desta") ?>">Biodata</a>
+                    <a href="<?= site_url("bintang/0/12") ?>">piramida</a>
+                    <a href="<?= base_url("biodata") ?>">Portofolio</a>
+                </div>
 
-            <h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
-            <a href="<?= base_url('biodata') ?>">Biodata</a>
-            <h2>The small framework with powerful features</h2>
+            </div>
+
 
         </div>
 

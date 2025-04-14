@@ -124,11 +124,14 @@ a {
 }
 
 .npm {
-  color: #c5d5ea;
   text-decoration: underline;
 }
 .isi {
   height: 100vh;
   padding-top: 20px;
   display: flex;
+}
+
+.bio {
+  font-size: 1.2rem;
 }

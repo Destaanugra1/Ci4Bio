@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Document</title>
 </head>
 
 <body class="flex justify-center items-center min-h-screen" id="faq">
-  <div class="space-y-2 w-4/5 h-4 max-w-2xl flex flex-col rounded-lg p-6 shadow-md sm:p-8 rounded ">
+  <div  data-aos="zoom-in-up" class="space-y-2 w-4/5 h-4 max-w-2xl flex flex-col rounded-lg p-6 shadow-md sm:p-8 rounded ">
     <details
       class="group border-s-4 border-green-500 bg-[#1E3A5F] p-6 [&_summary::-webkit-details-marker]:hidden "
       open>
@@ -63,6 +64,10 @@
       </p>
     </details>
   </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
