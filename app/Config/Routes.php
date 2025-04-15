@@ -7,6 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/biodata', 'Home::biodata');
-$routes->get('/bintang/(:num)/(:num)', 'Home::bintang/$1/$2');
+$routes->get('/bintang/(:num5)/(:num)', 'Home::bintang/$1/$2');
 $routes->get('/biodataCard/(:any)/(:any)', 'Home::biodataCard/$1/$2');
 

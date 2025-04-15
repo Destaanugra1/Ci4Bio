@@ -12,24 +12,20 @@ class Home extends BaseController
     {
         return view('biodata');
     }
-    public function bintang($start, $end)
-    { {
-        $angka = []; // buat array kosong
-        $count = 0; // buat variabel counter
-
-        for ($i = 1; $count < ($end - $start + 1); $i++) {
-            $baris = []; // angka yang dihasilkan dari baris ke-1 atau satu angka
-            for ($j = 0; $j < $i; $j++) {
-                if ($start + $count > $end) break; // jika sudah lebih dari batas akhir
-                $baris[] = $start + $count; //tambahkan angka ke dalam array
-                $count++; // tambahkan perhitungan
+    public function bintang($awal, $akhir)
+    {
+        $hasil = []; // Array untuk menyimpan hasil
+        for ($baris = 1, $angka = $awal; $angka <= $akhir; $baris++) {
+            $barisAngka = [];
+            for ($i = 0; $i < $baris && $angka <= $akhir; $i++, $angka++) {
+                $barisAngka[] = $angka;
             }
-            $angka[] = $baris; // tambahkan baris ke dalam array
+            $hasil[] = $barisAngka;
         }
 
-        return view('bintang', ['angka' => $angka]);
+        return view('bintang', ['angka' => $hasil]);
     }
-    }
+
     public function biodataCard($npm, $nama)
     {
         $data = [
