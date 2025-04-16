@@ -36,10 +36,6 @@
             <div class="w-1/3 text-gray-600 font-semibold">NPM</div>
             <div class="w-2/3 text-gray-800"><?= $npm ?></div>
           </div>
-          <!-- <div class="flex py-2">
-            <div class="w-1/3 text-gray-600 font-semibold">Pacar</div>
-            <div class="w-2/3 text-gray-800">Ratuuuuuu</div>
-          </div> -->
           <div class="flex py-2">
             <div class="w-1/3 text-gray-600 font-semibold">Kelas</div>
             <div class="w-2/3 text-gray-800">4B</div>
