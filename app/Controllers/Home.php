@@ -6,48 +6,40 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('welcome_message');
+        return view('dashboard');
     }
     public function biodata(): string
     {
         return view('biodata');
     }
-    public function piramida($awal, $akhir)
-     {
+    public function biodataCard($npm, $nama)
+    {
+        $data = [
+            'npm' => $npm,
+            'nama' => $nama,
+            'foto' => 'img/myfoto.png'
+        ];
+        return view('biodataCard', $data);
+    }
+    public function piramid($awal, $akhir): string
+    { 
         $data['piramid'] = [];
-
         for ($i = $awal; $i <= $akhir; $i++) {
-            // Hitung spasi agar rata tengah
             $spasi = '';
             for ($k = 0; $k < $akhir - $i; $k++) {
                 $spasi .= ' ';
             }
-
-            // Buat deretan angka dari 1 sampai i
             $angka = '';
             for ($j = 1; $j <= $i; $j++) {
-                $angka .= $j . ' ';
+                $angka .= $j. ' ';
             }
-
-            // Gabung spasi dan angka, lalu simpan ke array
+            // gabungkan datanya
             $data['piramid'][] = $spasi . $angka;
         }
 
         $data['awal'] = $awal;
         $data['akhir'] = $akhir;
-
-        return view('piramida', $data);
+        return view('piramid', $data);
     }
-
-
-    public function biodataCard($nama, $npm)
-    {
-        $data = [
-            'nama' => $nama,
-            'npm' => $npm,
-            'foto' => 'img/myfoto.png'
-
-        ];
-        return view('biodataCard', $data);
-    }
+  
 }

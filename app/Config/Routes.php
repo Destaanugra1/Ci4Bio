@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/biodata', 'Home::biodata');
+$routes->get('/programstudi', 'Programstudi::index');
 $routes->get('/biodataCard/(:any)/(:any)', 'Home::biodataCard/$1/$2');
-$routes->get('/piramida/(:num)/(:num)', 'Home::piramida/$1/$2');
+$routes->get('/piramid/(:num)/(:num)', 'Home::piramid/$1/$2');
+
 
