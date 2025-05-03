@@ -28,4 +28,12 @@ class M_prodi extends Model
         $query = $this->builder->get();
         return $query->getResult(); // ✅ sesuai returnType = 'object'
     }
+
+    function add($data) {
+        if($this->builder->insert($data)) {
+            return 'success';
+        }else {
+            return 'failed';
+        }
+    }
 }

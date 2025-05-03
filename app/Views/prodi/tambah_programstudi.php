@@ -309,41 +309,39 @@
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Program Studi</h1>
+          <h1 class="h2">Tambah Program Studi</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-              <a href="<?= base_url('tambah-programstudi') ?>" class="btn btn-success">Tambah</a>
+              <button type="button" class="btn btn-success">Back</button>
             </div>
 
           </div>
         </div>
+        <form method="POST" action="<?= base_url() . uri_string() ?>" class="needs-validation" novalidate>
+          
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Name Program Studi</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" name="nama_programstudi" required>
+              <div class="invalid-feedback">
+                Valid Programstudi name is required.
+              </div>
+            </div>
 
-        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Deskripsi</label>
+              <input type="description" class="form-control" id="lastName" placeholder="" name="programstudi_deskripsi" value="" required>
+              <div class="invalid-feedback">
+                Valid Deskripsi is required.
+              </div>
+            </div>
 
-        <h2>Section title</h2>
-        <div class="table-responsive small">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Nama Program Studi</th>
-                <th scope="col">Deskripsi</th>
-                <th scope="col">action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($prodi as $aProdi) { ?>
-                <tr>
-                  <td><?= $aProdi->nama_programstudi ?></td>
-                  <td><?= $aProdi->programstudi_deskripsi ?></td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-primary">Edit</button>
-                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
-                  </td>
-                </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
+
+
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Tambah Prodi</button>
+        </form>
+
       </main>
     </div>
   </div>
