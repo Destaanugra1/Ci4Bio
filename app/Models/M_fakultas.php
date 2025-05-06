@@ -4,13 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class M_prodi extends Model
+class M_fakultas extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'programstudi';
-    protected $primaryKey       = 'id_programstudi';
-
-    protected $orderBy          = 'nama_programstudi';
+    protected $table            = 'fakultas';
+    protected $primaryKey       = 'kode_fakultas';
+    protected $orderBy          = 'deskripsi_fakultas';
     protected $orderByType      = 'ASC';
 
     protected $builder;
