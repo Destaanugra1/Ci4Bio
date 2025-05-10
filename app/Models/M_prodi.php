@@ -29,11 +29,53 @@ class M_prodi extends Model
         return $query->getResult();
     }
 
-    function add($data) {
-        if($this->builder->insert($data)) {
+    function add($data)
+    {
+        if ($this->builder->insert($data)) {
             return 'success';
-        }else {
+        } else {
             return 'failed';
         }
+    }
+
+    function getData($idprodi)
+    {
+        $db = db_connect();
+        $query = $db->query("SELECT * FROM  programstudi WHERE id_programstudi = '$idprodi'");
+        $respon = $query->getRow();
+        return $respon;
+    }
+
+    function updateData($idprodi, $namaProdi, $deskripsiProdi)
+    {
+        $message = '';
+        $db = db_connect();
+        try {
+            if (! $db->simpleQuery("UPDATE programstudi SET nama_programstudi = '$namaProdi', programstudi_deskripsi = '$deskripsiProdi' WHERE programstudi.id_programstudi = '$idprodi'")) {
+                $message = $db->error();
+            } else {
+                $message = 'success';
+            }
+        } catch (\Exception $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+
+
+    function deleteData($idprodi)
+    {
+        $message = '';
+        $db = db_connect();
+        try {
+            if (! $db->simpleQuery("DELETE FROM programstudi WHERE id_programstudi = '$idprodi'")) {
+                $message = $db->error();
+            } else {
+                $message = 'success';
+            }
+        } catch (\Exception $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
     }
 }

@@ -45,4 +45,27 @@ class Programstudi extends BaseController
     }
     return view('prodi/tambah_programstudi');
   }
+
+  public function edit($idProdi)
+  {
+    if ($_POST) {
+      $dataPost['nama_programstudi'] = $this->request->getVar('nama_programstudi');
+      $dataPost['programstudi_deskripsi'] = $this->request->getVar('programstudi_deskripsi');
+      $update = $this->mProdi->updateData($idProdi, $dataPost['nama_programstudi'], $dataPost['programstudi_deskripsi']);
+      if ($update == 'success') {
+        return redirect()->to('/programstudi')->with('success', 'Data Berhasil Diubah');
+      } else {
+        return redirect()->to('/edit-programstudi/' . $idProdi)->with('error', 'Data Gagal Diubah');
+      }
+    }
+    $getData = $this->mProdi->getData($idProdi);
+    $data['prodi'] = $getData;
+    return view('prodi/edit_programstudi', $data);
+  }
+
+  public function delete($idProdi)
+  {
+    $this->mProdi->deleteData($idProdi);
+    return redirect()->to('/programstudi')->with('success', 'Data Berhasil Dihapus');
+  }
 }
