@@ -47,4 +47,30 @@ class Fakultas extends BaseController
     }
     return view('fakultas/tambah_fakultas');
   }
+
+  public function edit($kode_fakultas)
+  {
+    if ($_POST) {
+      $dataPost['nama_fakultas'] = $this->request->getVar('nama_fakultas');
+      $dataPost['deskripsi_fakultas'] = $this->request->getVar('deskripsi_fakultas');
+      $update = $this->mFakultas->updateData($kode_fakultas, $dataPost['nama_fakultas'], $dataPost['deskripsi_fakultas']);
+      if ($update == 'success') {
+        return redirect()->to('/fakultas')->with('success', 'Data Berhasil Diubah');
+      } else {
+        return redirect()->to('/edit-fakultas/' . $kode_fakultas)->with('error', 'Data Gagal Diubah');
+      }
+    }
+    $getData = $this->mFakultas->getData($kode_fakultas);
+    if (!$getData) {
+      die('Data tidak ditemukan untuk kode_fakultas: ' . $kode_fakultas);
+    }
+    $data['fakultas'] = $getData;
+    return view('fakultas/edit_fakultas', $data);
+  }
+
+  public function delete($kode_fakultas)
+  {
+    $this->mFakultas->deleteData($kode_fakultas);
+    return redirect()->to('/fakultas')->with('success', 'Data Berhasil Dihapus');
+  }
 }

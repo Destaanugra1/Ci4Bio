@@ -63,7 +63,7 @@ class M_prodi extends Model
     }
 
 
-    function deleteData($idprodi)
+    function    deleteData($idprodi)
     {
         $message = '';
         $db = db_connect();
